@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторские гайды | Алёна Котляр</title>
+    <style>
+        /* Твой фирменный дизайн */
+        body {
+            font-family: "Monoid";
+            background: linear-gradient(45deg, #190534 0%, #5D0925 100%);
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: #dedccf;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            animation: smoothAppear 1s ease-out; 
+        }
+        @keyframes smoothAppear {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #222;
+        }
+        
+        /* Стили прайс-листа с главной страницы */
+        .price-section {
+            margin-bottom: 30px;
+        }
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            gap: 12px;
+        }
+        .price-item span:first-child {
+            flex: 1; /* Текст гайда занимает всё свободное место */
+        }
+        .price-item span:last-child {
+            font-weight: bold;
+            white-space: nowrap; /* Чтобы цена не переносилась на новую строку */
+            text-align: right;
+        }
+
+        /* Кнопки */
+        .btn {
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            color: #FFFFFF; 
+            font-weight: bold;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-buy { background-color: #9F81BD; margin-bottom: 15px; } 
+        /* Новый стиль для кнопки с текстурой */
+        .btn-gold-texture {
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 10px;
+            display: block; /* Чтобы кнопка занимала всю ширину */
+            font-weight: bold;
+            color: #FFFFFF; /* Белый текст для контраста */
+            
+            /* Самое важное: Фон */
+            /* Мы накладываем два слоя: сверху темную вуаль, снизу твою картинку */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* 40% затемнения */
+                url('gold-button-bg.jpg'); /* ВАЖНО: Убедись, что имя файла совпадает! */
+            
+            background-size: cover; /* Картинка растягивается на всю кнопку */
+            background-position: center; /* Центрируем текстуру */
+            background-repeat: no-repeat;
+            
+            border: 1px solid rgba(212, 175, 55, 0.5); /* Тонкая золотая рамка */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Глубокая тень */
+            transition: all 0.3s ease;
+        }
+
+        /* Эффект при наведении */
+        .btn-gold-texture:hover {
+            transform: scale(1.03); /* Чуть увеличивается */
+            /* При наведении делаем золотое свечение вокруг */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7); 
+            border-color: rgba(212, 175, 55, 1); /* Рамка становится ярче */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Авторские гайды</h1>
+    </div>
+
+    <div class="price-section">
+        <div class="price-item">
+            <span>Как поддерживать холодный оттенок дома</span>
+            <span>500 ₽</span>
+        </div>
+        <div class="price-item">
+            <span>Как уложить волосы кудрявым методом</span>
+            <span>1000 ₽</span>
+        </div>
+        <div class="price-item">
+            <span>Как избавиться от желтизны в блонде в домашних условиях</span>
+            <span>1000 ₽</span>
+        </div>
+        <div class="price-item">
+            <span>Как спасти волосы после неудачного осветления</span>
+            <span>2000 ₽</span>
+        </div>
+    </div>
+
+    <a href="https://t.me/alenaimage" class="btn btn-buy">Написать и купить гайд</a>
+
+    <a href="index.html" class="btn-gold-texture">← Вернуться к прайсу</a>
+</div>
+
+</body>
+</html>

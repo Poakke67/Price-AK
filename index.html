@@ -61,7 +61,16 @@
             justify-content: space-between;
             margin-bottom: 12px;
             font-size: 15px;
+        }    
+        .price-item span:first-child {
+            flex: 1; /* Текст гайда занимает всё свободное место */
         }
+        .price-item span:last-child {
+            font-weight: bold;
+            white-space: nowrap; /* Чтобы цена не переносилась на новую строку */
+            text-align: right;
+        }
+        
         .links {
             display: flex;
             flex-direction: column;
@@ -123,11 +132,32 @@
         .carousel img {
             /* Картинка занимает 85% ширины, чтобы было видно краешек следующей — это подсказывает клиенту, что нужно листать */
             flex: 0 0 85%; 
-            height: 250px; /* Высота фотографий */
+            height: 500px; /* Высота фотографий */
             object-fit: cover; /* Фотографии красиво обрезаются и не сплющиваются */
             border-radius: 15px; /* Скругленные углы */
             scroll-snap-align: center; /* Картинка всегда встает по центру при перелистывании */
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        /* --- Классы для корректировки положения фото --- */
+
+        /* Показывать ВЕРХНЮЮ часть фото (если важный объект обрезан сверху) */
+        .pos-top {
+            object-position: center top;
+        }
+
+        /* Показывать НИЖНЮЮ часть фото (если важный объект обрезан снизу) */
+        .pos-bottom {
+            object-position: center bottom;
+        }
+
+        /* Тонкая настройка: чуть выше середины (например, для портретов) */
+        .pos-up-a-bit {
+            object-position: center 30%; /* 0% это верх, 100% это низ */
+        }
+
+        /* Тонкая настройка: чуть ниже середины */
+        .pos-down-a-bit {
+            object-position: center 70%;
         }
     </style>
 </head>
@@ -142,9 +172,14 @@
 
     <div class="carousel-container">
         <div class="carousel">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500" alt="Фото 1">
-            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500" alt="Фото 2">
-            <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500" alt="Фото 3">
+            <img src="1.jpg" alt="Фото 1">
+            <img src="2.jpg" class="pos-up-a-bit" alt="Фото 2">
+            <img src="3.jpg" alt="Фото 3">
+            <img src="4.jpg" class="pos-bottom" alt="Фото 4">
+            <img src="5.jpg" alt="Фото 5">
+            <img src="6.jpg" alt="Фото 6">
+            <img src="7.jpg" alt="Фото 7">
+            <img src="8.jpg" alt="Фото 8">
         </div>
     </div>
 
@@ -174,20 +209,24 @@
             <span>Укладка на утюжок/плойку</span>
             <span>750 ₺</span>
         </div>
-        <div class="price-section">
-            <h2>Очищение волос хелатами от перенакоплений</h2>
-            <div class="price-item">
-                <span>Единарозовая смывка</span>
-                <span>700 ₺</span>
+    </div>
+
+    <div class="price-section">
+        <h2>Очищение волос хелатами от перенакоплений</h2>
+        <div class="price-item">
+            <span>Единарозовая смывка</span>
+            <span>700 ₺</span>
         </div>
         <div class="price-item">
             <span>Абонемент на месяц для выхода из тёмного (4 раза в течении месяца)</span>
             <span>2200 ₺</span>
         </div>
         <div class="price-item">
-            <span>Абонемент на месяц для выхода из чёрного на 16 смывок (в течении месяца, раз в неделю по 4 смывки)</span>
+            <span>Абонемент на месяц для выхода из чёрного (в течении месяца, раз в неделю по 4 смывки)</span>
             <span>9000 ₺</span>
         </div>
+    </div>
+
     <div class="price-section">
         <h2>Окрашивания</h2>
         <div class="price-item">
@@ -206,6 +245,8 @@
             <span>Осветление корней от 2 см (уход и тонирование входят в стоимость)</span>
             <span>4000 ₺</span>
         </div>
+    </div>
+
     <div class="price-section">
         <h2>Тонирование в один тон</h2>
         <div class="price-item">
@@ -224,6 +265,8 @@
             <span>Коррекция оттенка блонда</span>
             <span>1800 ₺</span>
         </div>
+    </div>
+
     <div class="price-section">
         <h2>Сложные окрашивания</h2>
         <div class="price-item">
@@ -239,12 +282,14 @@
             <span>5000-15000 ₺</span>
         </div>
     </div>
-    </div>
-    </div>
+
+    <a href="guides.html" class="btn" style="background: linear-gradient(45deg, #d4af37, #f3e5ab); color: #333; margin-bottom: 25px; display: block; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);">
+        ✨ Хочешь знать как уложить волосы уже сейчас? ✨
+    </a>
 
     <div class="links">
-        <a href="https://wa.me/89219972925" class="btn btn-whatsapp">Записаться в WhatsApp</a>
-        <a href="https://t.me/Poakke" class="btn btn-telegram">Написать в Telegram</a>
+        <a href="https://wa.me/79219972925" class="btn btn-whatsapp">Записаться в WhatsApp</a>
+        <a href="https://t.me/alenaimage" class="btn btn-telegram">Написать в Telegram</a>
         <a href="https://instagram.com/alenaimage" class="btn btn-instagram">Я в Instagram</a>
     </div>
 </div>
